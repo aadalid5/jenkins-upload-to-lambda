@@ -1,4 +1,4 @@
-def mainBranch = "main"
+def mainBranch = "main" // for multibranch pipelines
 
 pipeline {
     agent any
@@ -6,17 +6,7 @@ pipeline {
     stages {
         stage('branchname') {
             steps{
-                echo env.BRANCH_NAME
-            }
-        }
-
-        stage('test') {
-            when {
-                branch mainBranch
-            }
-
-            steps {
-                echo "inside testing"
+                echo env.CHANGE_TARGET
             }
         }
     }
