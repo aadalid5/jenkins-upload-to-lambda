@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('branchname') {
             steps{
+                script{
                     echo ${env.BRANCH_NAME}
                     echo ${env.CHANGE_TARGET}
+                }
             }
         }
     }
