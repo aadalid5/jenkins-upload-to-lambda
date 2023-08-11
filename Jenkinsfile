@@ -4,13 +4,42 @@ pipeline {
     agent any
 
     stages {
-        stage('branchname') {
-            steps{
-                script{
-                    echo "${env.BRANCH_NAME}"
-                    echo "${env.CHANGE_TARGET}"
-                }
+        stage('Setup') {
+            steps {
+                cleanWs()
+                checkout scm
             }
+        }
+
+        stage("Install Dependencies") {
+            steps {
+                sh "node -v"
+                sh "npm ci"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building prod bundle:'
+                sh 'npm run env:prod build'
+            }
+        }
+
+        stage('Push') {
+            steps {
+                sh 'npm run env:prod push'
+                echo 'Changes successfully pushed to Prod.'
+            }
+        }
+
+        stage('deploy'){
+            sh 'npm run env:prod deploy'
+            echo 'Changes successfully deployed to Prod.'   
+        }
+
+        stage('publish'){
+            sh 'npm run env:prod publish'
+            echo 'Changes successfully published to Prod.'
         }
     }
 }
