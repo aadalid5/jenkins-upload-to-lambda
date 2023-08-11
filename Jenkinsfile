@@ -2,7 +2,9 @@ def mainBranch = "main" // for multibranch pipelines
 
 pipeline {
     agent any
-
+    
+    tools { nodejs 'node16' }
+    
     stages {
         stage('Setup') {
             steps {
