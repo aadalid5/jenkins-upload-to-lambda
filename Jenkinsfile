@@ -33,13 +33,17 @@ pipeline {
         }
 
         stage('deploy'){
-            sh 'npm run env:prod deploy'
-            echo 'Changes successfully deployed to Prod.'   
+            steps{
+                sh 'npm run env:prod deploy'
+                echo 'Changes successfully deployed to Prod.'   
+            }
         }
 
         stage('publish'){
-            sh 'npm run env:prod publish'
-            echo 'Changes successfully published to Prod.'
+            steps{
+                sh 'npm run env:prod publish'
+                echo 'Changes successfully published to Prod.'
+            }
         }
     }
 }
