@@ -1,0 +1,16 @@
+{
+    "awsRegion": "us-east-1",
+    "cfDistributionID": "",
+    "cacheBehaviorPath": "/",
+    "autoIncrementVersion": true,
+    "lambdaCodeS3Bucket": "hbp-lambda",
+    "cfTriggers": [
+      {
+        "cfTriggerName": "viewer-response",
+        "lambdaFunctionName": "",
+        "lambdaCodeS3Key": "",
+        "lambdaCodeFilePath": "packages/hbr-viewer-response/dist/hbr-app-viewer-response-lambda-qa.zip"
+      }
+    ]
+  }
+  
