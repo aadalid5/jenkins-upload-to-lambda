@@ -29,8 +29,8 @@ pipeline {
 
         stage('Push') {
             steps {
-                // sh 'npm run env:prod push'
-                sh 'update-lambda-edge push --bucket demo-lambda-v11 --key demo/demo-viewer-response/prod/demo-viewer-response-lambda-prod.zip --file-path packages/demo-viewer-response/dist/demo-viewer-response-lambda-prod.zip'
+                sh 'npm run env:prod push'
+                // sh 'update-lambda-edge push --bucket demo-lambda-v11 --key demo/demo-viewer-response/prod/demo-viewer-response-lambda-prod.zip --file-path packages/demo-viewer-response/dist/demo-viewer-response-lambda-prod.zip'
                 echo 'Changes successfully pushed to Prod.'
             }
         }
