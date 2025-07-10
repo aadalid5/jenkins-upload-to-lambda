@@ -35,18 +35,18 @@ pipeline {
             }
         }
 
-        // stage('deploy'){
-        //     steps{
-        //         sh 'npm run env:prod deploy'
-        //         echo 'Changes successfully deployed to Prod.'   
-        //     }
-        // }
+        stage('deploy'){
+            steps{
+                sh 'npm run env:prod deploy'
+                echo 'Changes successfully deployed to Prod.'   
+            }
+        }
 
-        // stage('publish'){
-        //     steps{
-        //         sh 'npm run env:prod publish'
-        //         echo 'Changes successfully published to Prod.'
-        //     }
-        // }
+        stage('publish'){
+            steps{
+                sh 'npm run env:prod publish'
+                echo 'Changes successfully published to Prod.'
+            }
+        }
     }
 }
