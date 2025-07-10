@@ -29,23 +29,24 @@ pipeline {
 
         stage('Push') {
             steps {
-                sh 'npm run env:prod push'
+                // sh 'npm run env:prod push'
+                sh 'update-lambda-edge push --bucket demo-lambda-v11 --key demo/demo-viewer-response/prod/demo-viewer-response-lambda-prod.zip --file-path packages/demo-viewer-response/dist/demo-viewer-response-lambda-prod.zip'
                 echo 'Changes successfully pushed to Prod.'
             }
         }
 
-        stage('deploy'){
-            steps{
-                sh 'npm run env:prod deploy'
-                echo 'Changes successfully deployed to Prod.'   
-            }
-        }
+        // stage('deploy'){
+        //     steps{
+        //         sh 'npm run env:prod deploy'
+        //         echo 'Changes successfully deployed to Prod.'   
+        //     }
+        // }
 
-        stage('publish'){
-            steps{
-                sh 'npm run env:prod publish'
-                echo 'Changes successfully published to Prod.'
-            }
-        }
+        // stage('publish'){
+        //     steps{
+        //         sh 'npm run env:prod publish'
+        //         echo 'Changes successfully published to Prod.'
+        //     }
+        // }
     }
 }
