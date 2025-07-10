@@ -1,12 +1,10 @@
 {
     "awsRegion": "us-east-1",
-    "cfDistributionID": "EW1U7RYW9VDW9",
     "cacheBehaviorPath": "/",
     "autoIncrementVersion": true,
     "lambdaCodeS3Bucket": "demo-lambda-v11",
     "cfTriggers": [
       {
-        "cfTriggerName": "viewer-response",
         "lambdaFunctionName": "demoLambdaEdgeFunction",
         "lambdaCodeS3Key": "demo/demo-viewer-response/prod/demo-viewer-response-lambda-prod.zip",
         "lambdaCodeFilePath": "packages/demo-viewer-response/dist/demo-viewer-response-lambda-prod.zip"
