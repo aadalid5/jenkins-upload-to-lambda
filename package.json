@@ -8,11 +8,9 @@
   ],
   "scripts": {
     "build": "lerna exec --ignore demo-lambda-edge-shared webpack",
-
     "env:test": "DEPLOY_ENV=test npm run",
     "env:qa": "DEPLOY_ENV=qa npm run",
     "env:prod": "DEPLOY_ENV=prod npm run",
-
     "push": "update-lambda-edge push --config packages/shared/config/config-${DEPLOY_ENV}.json",
     "deploy": "update-lambda-edge deploy --config packages/shared/config/config-${DEPLOY_ENV}.json",
     "publish": "update-lambda-edge publish --config packages/shared/config/config-${DEPLOY_ENV}.json",
@@ -28,7 +26,7 @@
   "devDependencies": {
     "@babel/core": "7.21.4",
     "lerna": "^4.0.0",
-    "update-lambda-edge": "1.0.0"
+    "update-lambda-edge": "^1.2.0"
   },
   "bugs": {
     "url": "https://github.com/aadalid5/jenkins-upload-to-lambda/issues"
