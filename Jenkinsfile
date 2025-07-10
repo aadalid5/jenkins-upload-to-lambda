@@ -29,7 +29,8 @@ pipeline {
 
         stage('Push') {
             steps {
-                sh 'npm run push:s3'
+                //sh 'npm run push:s3'
+                sh 'npm run env:prod push'
                 echo 'Changes successfully pushed to Prod.'
             }
         }
